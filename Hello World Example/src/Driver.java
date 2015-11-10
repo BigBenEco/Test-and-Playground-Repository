@@ -1,5 +1,5 @@
 //Made By Ben
-import javax.swing.*;
+import javax.swing.JOptionPane;
 public class Driver {
 	public static void main( String args[] )
 	{
