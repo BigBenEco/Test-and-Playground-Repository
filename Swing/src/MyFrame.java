@@ -24,8 +24,4 @@ public class MyFrame extends JFrame
             current = new MyFrame();
         return current;
     }
-    public static void main(String [] args)
-    {
-       MyFrame.getInstance();
-    }
 }
