@@ -1,0 +1,158 @@
+
+<!-- saved from url=(0061)http://www.cs.montana.edu/hunterl/132/lectures/GUI/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"></style></head><body>
+<h2>Reading Assignment</h2>
+I've been asked by many students "what do we read?"<br>
+GUI code is all over the Internet, many, many examples. <br>
+The Java site has many tutorials on SWing, and GUI's. <br> 
+<br>
+First will start with Swing classes and methods and then we'll show how JavaFX is changing some things. <br>
+
+<h1>JFrame Common Methods</h1>
+<ul>
+<li>Container getContentPane()</li>
+<li>void setDefaultCloseOperation(int operation)</li>
+<li>setContentPane(Container contentPane)</li>
+<li>void setTitle(String title)</li>
+<li>void setMenuBar(MenuBar bm)</li>
+<li>void setSize(int width, int height)</li>
+<li>void pack()</li>
+<li>setVisible(true)</li>
+</ul>
+
+
+<h1>JPanel Common Methods</h1>
+<ul>
+<li>JPanel()</li>
+<li>JPanel(LayoutManager layout)</li>
+<li>void add(Component c)</li>
+<li>void paintComponent(Graphics g)</li>
+<li>void repaint()</li>
+<li>void getGraphics(Graphics g)</li><li>
+</li></ul>
+
+<h1>Graphics Common Methods</h1>
+<ul>
+<li>void drawLine(int x1, int y1, int x2, int y2)</li>
+<li>void drawOval(int x, int y, int width, int height)</li>
+<li>void fillOval(int x, int y, int width, int height)</li>
+<li>void drawPolygon(Polygon p)</li>
+<li>void fillPolygon(Polygon p)</li>
+<li>void drawRect(int x, int y, int width, int height)</li>
+<li>void fillRect(int x, int y, int width, int height)</li>
+<li>Color getColor()</li>
+<li>void setColor(Color c)</li>
+</ul>
+<h1>Layout Managers</h1>
+
+<h2>java.awt.BorderLayout</h2>
+<ul>
+<li>The default layout for a JFrame.</li>
+<li>Five areas are defined: north, east, south, west and center.</li>
+<li>setLayout(new BorderLayout());</li>
+</ul>
+
+<h2>java.awt.FlowLayout</h2>
+<ul>
+<li>The default layout for a JPanel.</li>
+<li>Components are added left to right, top to bottom, centered.</li>
+<li>setLayout(new FlowLayout());</li>
+</ul>
+
+<h2>java.awt.BoxLayout</h2>
+<ul>
+<li>Components can be placed in either a horizontal or vertical arrangement.</li>
+<li>setLayout(new BoxLayout(Container target, BoxLayout.X_AXIS));</li>
+<li>setLayout(new BoxLayout(Container target, BoxLayout.Y_AXIS));</li>
+</ul>
+
+<h2>java.awt.GridLayout</h2>
+<ul>
+<li>Components are place in a rectangular grid.</li>
+<li>setLayout(new GridLayout(2,2));</li>
+</ul>
+<h1>Monday's In Class code</h1>
+<ul>
+<li>I will do a simple JButton with a actionListener.
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/SimpleButton.java">SimpleButton.java</a>
+</li></ul>
+<h2>Also</h2>
+<ul><li>One JFrame, two JPanels, one JButton, and one MouseListener
+</li><li>I will cover more on JPanels, JButtons and the frame on Wednesday. Plus the MouseListener.   
+</li><li>Intro Code that I will start with: <a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/CSCI132_FrameMouseButton.zip">FrameMouseButton.zip</a>
+<ul><li>The zipped folder is a Netbeans project, the code is in the src folder. You can import the project into Eclipse or just use Netbeans. 
+</li></ul>
+</li></ul>
+<h1>SwingSet examples</h1>
+Swingset2is a Swing program that Oracle made to demo the Swing capabilities. It used to come with the JDK, 
+now it's a separate download. If you go to the Oracle download of JDK, below the JDK downloads there is a link for 
+examples and demos. I downloaded jdk-8u66-windows-x64-demos.zip and it was in 
+that folder under demos/jfc.
+There is a lot of example code for GUI's in the source folder. I'll show it on Monday.
+
+<p>
+The following is more example code. I've used most of this in past semesters, and some of it I will go 
+over again this semester. If you get confused on any of the components listed like layouts, go to teh cod below that is an example. 
+</p><p>
+<a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/firstDay.zip">All of the following code can be found in this zipped file (that way you don't have to download each individually).</a></p><p>
+</p><h1> Code Part 1</h1>
+<ul><li>Start with a simple JFrame with a button, the button outputs the ActionEvent as text. 
+    <ul><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/firstDay/SimpleButton.java">SimpleButton.java</a>
+    </li></ul>
+</li></ul>
+<h1> Code - Part 2</h1>
+<ul>
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/may22/MyFrame.java">MyFrame.java</a></li>
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/may22/MyPanel.java">MyPanel.java</a></li>
+</ul>
+<h1> Code Part 3</h1>
+<ul><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept8/ButtonPanelExample.java">ButtonPanelExample.java</a> 
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept8/FrameTest.java">FrameTest.java</a>
+</li></ul>
+<h1> Code Part 4</h1>
+<ul>
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/may22/Paint.java">Paint.java</a></li>
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/may22/PaintPanel.java">PaintPanel.java</a></li>
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/may22/ButtonPanel.java">ButtonPanel.java</a></li>
+</ul>
+<h1>Code Part 5</h1>
+<ul>
+<li>BorderLayouts
+
+<ul>
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/BorderLayoutDemo.java">BorderDemo.java</a>
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/BorderLayoutFrame.java">BorderLayoutFrame.java</a>
+</li></ul>
+
+</li><li>FlowLayouts
+<ul>
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/FlowLayoutDemo.java">FlowDemo.java</a>
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/FlowLayoutFrame.java">FlowLayoutFrame.java</a>
+</li></ul>
+
+</li><li>GridLayouts
+<ul>
+
+<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/GridLayoutDemo.java">GridDemo.java</a>
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/GridLayoutFrame.java">GridLayoutFrame.java</a>
+</li></ul>
+
+
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/NullLayoutExample.txt">Null Layout with a menuBar</a>
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/PullDown.java">Pulldown menu example</a>
+</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/ScrollExample.java">Scrollbar example</a>
+</li><li>Multiple examples in one program
+<ul>
+  	<li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/Driver.java">Driver</a>
+
+      	</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/MouseWindow.java">MouseWindow</a>
+      	</li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/SizeWindow.java">Resize window</a>
+        </li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/ColorWindow.java">Color Window</a>
+        </li><li><a href="http://www.cs.montana.edu/hunterl/132/lectures/GUI/sept5/ButtonWindow.java">Button Window</a>
+</li></ul>
+</li></ul>
+
+
+
+
+</body></html>

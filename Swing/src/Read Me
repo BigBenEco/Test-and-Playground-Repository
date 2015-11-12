@@ -1,0 +1,117 @@
+http://www.cs.montana.edu/hunterl/132/lectures/GUI/index.html
+
+Reading Assignment
+
+I've been asked by many students "what do we read?"
+GUI code is all over the Internet, many, many examples. 
+The Java site has many tutorials on SWing, and GUI's. 
+
+First will start with Swing classes and methods and then we'll show how JavaFX is changing some things. 
+JFrame Common Methods
+
+Container getContentPane()
+void setDefaultCloseOperation(int operation)
+setContentPane(Container contentPane)
+void setTitle(String title)
+void setMenuBar(MenuBar bm)
+void setSize(int width, int height)
+void pack()
+setVisible(true)
+JPanel Common Methods
+
+JPanel()
+JPanel(LayoutManager layout)
+void add(Component c)
+void paintComponent(Graphics g)
+void repaint()
+void getGraphics(Graphics g)
+Graphics Common Methods
+
+void drawLine(int x1, int y1, int x2, int y2)
+void drawOval(int x, int y, int width, int height)
+void fillOval(int x, int y, int width, int height)
+void drawPolygon(Polygon p)
+void fillPolygon(Polygon p)
+void drawRect(int x, int y, int width, int height)
+void fillRect(int x, int y, int width, int height)
+Color getColor()
+void setColor(Color c)
+Layout Managers
+
+java.awt.BorderLayout
+
+The default layout for a JFrame.
+Five areas are defined: north, east, south, west and center.
+setLayout(new BorderLayout());
+java.awt.FlowLayout
+
+The default layout for a JPanel.
+Components are added left to right, top to bottom, centered.
+setLayout(new FlowLayout());
+java.awt.BoxLayout
+
+Components can be placed in either a horizontal or vertical arrangement.
+setLayout(new BoxLayout(Container target, BoxLayout.X_AXIS));
+setLayout(new BoxLayout(Container target, BoxLayout.Y_AXIS));
+java.awt.GridLayout
+
+Components are place in a rectangular grid.
+setLayout(new GridLayout(2,2));
+Monday's In Class code
+
+I will do a simple JButton with a actionListener.
+SimpleButton.java
+Also
+
+One JFrame, two JPanels, one JButton, and one MouseListener
+I will cover more on JPanels, JButtons and the frame on Wednesday. Plus the MouseListener.
+Intro Code that I will start with: FrameMouseButton.zip
+The zipped folder is a Netbeans project, the code is in the src folder. You can import the project into Eclipse or just use Netbeans.
+SwingSet examples
+
+Swingset2is a Swing program that Oracle made to demo the Swing capabilities. It used to come with the JDK, now it's a separate download. If you go to the Oracle download of JDK, below the JDK downloads there is a link for examples and demos. I downloaded jdk-8u66-windows-x64-demos.zip and it was in that folder under demos/jfc. There is a lot of example code for GUI's in the source folder. I'll show it on Monday.
+The following is more example code. I've used most of this in past semesters, and some of it I will go over again this semester. If you get confused on any of the components listed like layouts, go to teh cod below that is an example.
+
+All of the following code can be found in this zipped file (that way you don't have to download each individually).
+
+Code Part 1
+
+Start with a simple JFrame with a button, the button outputs the ActionEvent as text.
+SimpleButton.java
+
+Code - Part 2
+
+MyFrame.java
+MyPanel.java
+
+Code Part 3
+
+ButtonPanelExample.java
+FrameTest.java
+
+Code Part 4
+
+Paint.java
+PaintPanel.java
+ButtonPanel.java
+
+Code Part 5
+
+BorderLayouts
+BorderDemo.java
+BorderLayoutFrame.java
+FlowLayouts
+FlowDemo.java
+FlowLayoutFrame.java
+GridLayouts
+GridDemo.java
+GridLayoutFrame.java
+Null Layout with a menuBar
+Pulldown menu example
+Scrollbar example
+Multiple examples in one program
+Driver
+MouseWindow
+Resize window
+Color Window
+Button Window
