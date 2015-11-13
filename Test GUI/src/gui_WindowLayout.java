@@ -26,7 +26,7 @@ public class gui_WindowLayout extends JFrame
         setSize(width, height);
         
         contents = getContentPane();
-        addMouseMotionListener(new MouseTracker());
+        //addMouseMotionListener(new MouseTracker());
       
         canvas = new gui_Canvas(width, height);
         toolBar = new gui_ToolBarLayout(canvas);
@@ -63,8 +63,8 @@ public class gui_WindowLayout extends JFrame
     	
           
          public void mouseMoved(MouseEvent e) {
-             if(e.getX() < 20){System.out.println("mouse at "+e.getX()+" and "+e.getY() ); toolBar.setSize(29, 29); }
-             else{toolBar.setSize(293, 293);}
+             if(e.getX() < 20){System.out.println("mouse at "+e.getX()+" and "+e.getY() ); toolBar.setSize(29, 29); toolBar.repaint(); }
+             else{toolBar.setSize(293, 293); toolBar.repaint();}
          }
           
          public void mouseDragged(MouseEvent e) {

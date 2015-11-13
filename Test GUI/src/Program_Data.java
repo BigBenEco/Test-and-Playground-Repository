@@ -8,6 +8,8 @@ public class Program_Data {
 	public int width;
 	public int height;
 	
+	public enum tool { Mouse, Box };
+	
 	Program_Data()
 	{
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

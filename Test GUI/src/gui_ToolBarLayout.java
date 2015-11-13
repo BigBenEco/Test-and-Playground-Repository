@@ -9,11 +9,11 @@ import javax.swing.*;
 
 public class gui_ToolBarLayout extends JPanel {
 	
-	gui_Canvas canvus;
+	gui_Canvas canvas;
 
 	gui_ToolBarLayout ( gui_Canvas canvus)
 	{
-		this.canvus = canvus;
+		this.canvas = canvus;
 		
 		setLayout( new BorderLayout( 5, 5 ) ); // 5 pixel gaps
 		
@@ -46,9 +46,18 @@ public class gui_ToolBarLayout extends JPanel {
 	   public void actionPerformed(ActionEvent ae)
 	   {
 	       String command = ae.getActionCommand();
-	       if(command.equals("Clear"))
+	       if(command.equals("Box"))
 	       {
-	    	   //canvus.clear();
+	    	   canvas.setTool(Tools.tool.Box);
+	       }
+	       else if(command.equals("Undo"))
+	       {
+	    	   canvas.setTool(Tools.tool.Mouse);
+	       }
+	       else if(command.equals("Clear"))
+	       {
+	    	   canvas.setTool(Tools.tool.Mouse);
+	    	   canvas.clear();
 	       }
 	   }
 	 }
