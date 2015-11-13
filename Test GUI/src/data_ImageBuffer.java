@@ -1,4 +1,5 @@
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 //this makes a limited stack of however many, help lowers the memory usage of the program compared to the stack class with no limitation
 public class data_ImageBuffer {
@@ -7,17 +8,17 @@ public class data_ImageBuffer {
 	
 	private int last, opening; // pointers to the ends of the arrays.
 	
-	private Graphics2D data[];
+	private BufferedImage data[];
 	
 	public boolean isEmpty = true;
 	
 	data_ImageBuffer( int size)
 	{
 		length = size;
-		data = new Graphics2D[length];
+		data = new BufferedImage[length];
 	}
 	
-	public void push(Graphics2D top)
+	public void push(BufferedImage top)
 	{
 		isEmpty = false;
 		if(opening == last)
@@ -28,7 +29,7 @@ public class data_ImageBuffer {
 		opening += ( opening == (length-1) ) ? (1-length) : 1;  //m
 	}
 
-	public Graphics2D pop(Graphics2D top) throws CanNotUndoException
+	public BufferedImage pop(BufferedImage top) throws CanNotUndoException
 	{
 		if(isEmpty)
 		{
