@@ -46,9 +46,11 @@ public class gui_Canvas extends JPanel
     {  
     	Graphics2D g2 = (Graphics2D)getGraphics();
     	Graphics2D gg = (Graphics2D) painting.getGraphics();
-    	g2.drawRect(0, 0, 20, 10);
+    	gg.drawRect(500, 210, 10, 20);
+    	g2.drawRect(500, 200, 20, 10);
+    	g2.drawImage(painting, null, 0, 0);
     	//g2.drawImage(painting, null, 0, 0);
-        super.paintComponent(g2);
+        //super.paintComponent(g2); //seems to refresh things
     }
     public void drawing()
     {
@@ -81,7 +83,7 @@ public class gui_Canvas extends JPanel
 
  	      toolBox.end(painting, endX, endY);  // pass by reference so it will alter painting and wo do not need to wory about passing values.
  	      
- 	     //paint(); //paints what things look like.
+ 	     paint(); //paints what things look like.
  	      
  	      //Driver.global.log(painting);
  	      //paint();//displays what is going on
