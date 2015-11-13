@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
 
 public class Tool_Box {
 	
@@ -23,7 +25,7 @@ public class Tool_Box {
 		myTool = tool.Mouse;
 	}
 	
-	public void start( tool myTool, int startX, int startY)
+	public void start( int startX, int startY)
 	{
 		doingWork = true;
 		switch(myTool)
@@ -49,7 +51,7 @@ public class Tool_Box {
 		}
 	}
 	
-	public Graphics2D hold(tool myTool, Graphics2D painting, int endX, int endY)
+	public BufferedImage hold( BufferedImage painting, int endX, int endY)
 	{
 		switch(myTool)
 		{
@@ -60,7 +62,7 @@ public class Tool_Box {
 			
 			case Box:
 			{
-				return BoxTool.drawBounds(endX, endY, outlineThickness, painting);  // Calls the special function for that particular tool, and gives it all the parameters it may need
+				return BoxTool.drawBounds(painting, endX, endY, outlineThickness);  // Calls the special function for that particular tool, and gives it all the parameters it may need
 			}	
 			
 			//this is were to add the calls to other tools here.
@@ -72,7 +74,7 @@ public class Tool_Box {
 		}
 	}
 	
-	public Graphics2D end(tool myTool, Graphics2D painting, int endX, int endY)
+	public BufferedImage end( BufferedImage painting, int endX, int endY)
 	{
 		doingWork = false;
 		switch(myTool)

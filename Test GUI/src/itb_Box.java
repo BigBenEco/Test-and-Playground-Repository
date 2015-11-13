@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 public class itb_Box {
 
@@ -21,15 +22,31 @@ public class itb_Box {
 	 * Like I said, both function below could be the same, they just need to draw.
 	 * That's Canvas will handle the data, what is and is not saved, and so all this functions need to do is return the image they altered.
 	 */
-	public Graphics2D drawBounds( int inX, int inY,  int outlineThickness, Graphics2D painting ) //A special function used when the mouse is being dragged to give a representation of the box
+	public BufferedImage drawBounds(  BufferedImage painting, int inX, int inY,  int outlineThickness ) //A special function used when the mouse is being dragged to give a representation of the box
 	{
-		// Code
-		return painting;
+		Graphics2D tool = (Graphics2D) painting.getGraphics();
+		/*now you us the tool to draw with, then you send into painting with the setGraphics() method.
+		* Note, I am not sure getting the Graphics2D object includes what ever is already been painted.
+		* but considering that everything so far has been passed by reference, and that its the raster
+		* that is passed by valued directly to the data handling, I think it will work just fine.
+		*/
+		
+		// Code Here
+		
+		return painting; // I guess it's not really needed to use returns since everything here has been passing by reference, but this helps show the flow of things
 	}
 	
-	public Graphics2D finalize( Graphics2D painting, int inX, int inY,  int outlineThickness, Color cFill, Color cOutline, boolean isFilled, boolean isOutlined )  // This should provide an idea of what is needed in the final product. The ToolBox class will have these predefined as we will wait till we work on the real project to add the options menu to actually changes things.
+	public BufferedImage finalize( BufferedImage painting, int inX, int inY,  int outlineThickness, Color cFill, Color cOutline, boolean isFilled, boolean isOutlined )  // This should provide an idea of what is needed in the final product. The ToolBox class will have these predefined as we will wait till we work on the real project to add the options menu to actually changes things.
 	{
-		// Code
-		return painting;
+		Graphics2D tool = (Graphics2D) painting.getGraphics();
+		/*now you use "tool" to draw with, then you send into painting with the setGraphics() method.
+		* Note, I am not sure getting the Graphics2D object includes what ever is already been painted.
+		* but considering that everything so far has been passed by reference, and that its the raster
+		* that is passed by valued directly in the final image saving methods higher up, I think it will work just fine.
+		*/
+		
+		// Code Here
+		
+		return painting; // I guess it's not really needed to use returns since everything here has been passing by reference, but this helps show the flow of things
 	}
 }

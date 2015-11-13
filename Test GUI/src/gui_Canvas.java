@@ -16,6 +16,7 @@ public class gui_Canvas extends JPanel
 	
 	public int wWidth, wHeight, width, height;
 	public Tool_Box toolBox = new Tool_Box();
+	private BufferedImage painting;
 	
 	
 	
@@ -56,18 +57,19 @@ public class gui_Canvas extends JPanel
        {
           int startX = e.getX();
 	      int startY = e.getY();
-	      toolBox.start(toolBox.myTool, startX, startY);
+	      toolBox.start(startX, startY);
 	   }
 	   
        public void mouseReleased(MouseEvent e){
     	  int endX = e.getX();
  	      int endY = e.getY();
- 	      Graphics2D painting = Driver.global.painting();
  	      
- 	      painting = toolBox.end(toolBox.myTool, painting, endX, endY);
+ 	      painting = Driver.global.painting(); // gets a safe copy
+
+ 	      painting =  toolBox.end(painting, endX, endY);
  	      
- 	      Driver.global.imageBuffer.push(painting);
- 	      paintComponent(painting);
+ 	      //Driver.global.imageBuffer.push(painting);
+ 	      paintComponent( painting.getGraphics() );
  	      
        } 
        public void mouseExited(MouseEvent evt){}
@@ -91,12 +93,12 @@ public class gui_Canvas extends JPanel
 	        		 //maybe change the icon of mouse.
 	        		 int curX = e.getX();
 	        	     int curY = e.getY();
-	        	     Graphics2D painting = Driver.global.painting();
+	        	     /*Graphics2D painting = Driver.global.painting();
 	        	     
-	        	     painting = toolBox.hold(toolBox.myTool, painting, curX, curY); // this function will oporate at all time, but is capable of turning off when not in use.
+	        	     painting = toolBox.hold(painting, curX, curY); // this function will oporate at all time, but is capable of turning off when not in use.
 	        	     
 	        	     /////////////////Driver.global.imageBuffer.push(painting);  Similar process to before, this alows for the displaing of things, but does not record it.
-	        	     paintComponent(painting);
+	        	     paintComponent(painting);*/
 	        	 }	break;
 	        	 default:
 	        	 {
