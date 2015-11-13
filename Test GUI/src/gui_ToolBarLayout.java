@@ -45,6 +45,7 @@ public class gui_ToolBarLayout extends JPanel {
 	{
 	   public void actionPerformed(ActionEvent ae)
 	   {
+		   //need oval and line as well as a means to toggle fill.
 	       String command = ae.getActionCommand();
 	       if(command.equals("Box"))
 	       {

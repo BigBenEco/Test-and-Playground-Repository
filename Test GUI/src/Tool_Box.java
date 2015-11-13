@@ -5,7 +5,7 @@ import java.awt.image.Raster;
 
 public class Tool_Box {
 	
-	public static enum tool { Mouse, Box };//this is were to add names to other tools here.
+	public static enum tool { Mouse, Box, Eclipse, Line };//this is were to add names to other tools here.
 	
 	public tool myTool;
 	public boolean doingWork = false;
