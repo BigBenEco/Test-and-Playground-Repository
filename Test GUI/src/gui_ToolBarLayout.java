@@ -48,15 +48,15 @@ public class gui_ToolBarLayout extends JPanel {
 	       String command = ae.getActionCommand();
 	       if(command.equals("Box"))
 	       {
-	    	   canvas.setTool(Tools.tool.Box);
+	    	   canvas.toolBox.myTool = Tool_Box.tool.Box;
 	       }
 	       else if(command.equals("Undo"))
 	       {
-	    	   canvas.setTool(Tools.tool.Mouse);
+	    	   canvas.toolBox.myTool = Tool_Box.tool.Mouse;
 	       }
 	       else if(command.equals("Clear"))
 	       {
-	    	   canvas.setTool(Tools.tool.Mouse);
+	    	   canvas.toolBox.myTool = Tool_Box.tool.Mouse;
 	    	   canvas.clear();
 	       }
 	   }
