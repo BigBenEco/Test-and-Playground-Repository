@@ -49,7 +49,7 @@ public class gui_Canvas extends JPanel
     	Graphics2D gg = (Graphics2D) painting.getGraphics();
     	gg.drawRect(500, 210, 10, 20);
     	g2.drawRect(500, 200, 20, 10);
-    	//g2.drawImage(painting, 0, 1, null);
+    	g2.drawImage(painting, 0, 1, null);
     	//g2.drawImage(painting, null, 0, 0);
         //super.paintComponent(g2); //seems to refresh things
     }
