@@ -51,7 +51,7 @@ public class Tool_Box {
 		}
 	}
 	
-	public void hold( Graphics2D painting, int endX, int endY)
+	public void hold( BufferedImage painting, int endX, int endY)
 	{
 		switch(myTool)
 		{
@@ -74,7 +74,7 @@ public class Tool_Box {
 		}
 	}
 	
-	public void end( Graphics2D painting, int endX, int endY)
+	public void end( BufferedImage painting, int endX, int endY)
 	{
 		doingWork = false;
 		switch(myTool)
