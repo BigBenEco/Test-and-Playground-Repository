@@ -45,10 +45,11 @@ public class gui_Canvas extends JPanel
     public void paint()
     {  
     	Graphics2D g2 = (Graphics2D)getGraphics();
+    	super.paintComponent(g2);
     	Graphics2D gg = (Graphics2D) painting.getGraphics();
     	gg.drawRect(500, 210, 10, 20);
     	g2.drawRect(500, 200, 20, 10);
-    	g2.drawImage(painting, null, 0, 0);
+    	//g2.drawImage(painting, 0, 1, null);
     	//g2.drawImage(painting, null, 0, 0);
         //super.paintComponent(g2); //seems to refresh things
     }
@@ -85,7 +86,7 @@ public class gui_Canvas extends JPanel
  	      
  	     paint(); //paints what things look like.
  	      
- 	      //Driver.global.log(painting);
+ 	      Driver.global.log(painting);
  	      //paint();//displays what is going on
  	      
        } 
