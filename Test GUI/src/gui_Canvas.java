@@ -34,14 +34,17 @@ public class gui_Canvas extends JPanel
 	
 	public void clear()
  	{
+		/*
  	    repaint();
  	    Graphics2D painting = (Graphics2D)getGraphics();  //goes through the logging process so that it can be part of the undo to.
  	    Driver.global.imageBuffer.push(painting);
 	    paintComponent(painting);
+	    
+	    //*/
  	  }
-    public void paintComponent(Graphics g)
+    public void paint()
     {  
-         super.paintComponent(g);
+         super.paintComponent(painting.getGraphics());
     }
     public void drawing()
     {
@@ -58,18 +61,23 @@ public class gui_Canvas extends JPanel
           int startX = e.getX();
 	      int startY = e.getY();
 	      toolBox.start(startX, startY);
+	      
 	   }
 	   
        public void mouseReleased(MouseEvent e){
     	  int endX = e.getX();
  	      int endY = e.getY();
  	      
- 	      painting = Driver.global.painting(); // gets a safe copy
-
- 	      painting =  toolBox.end(painting, endX, endY);
+ 	      Graphics2D g2 = (Graphics2D)getGraphics();
  	      
- 	      //Driver.global.imageBuffer.push(painting);
- 	      paintComponent( painting.getGraphics() );
+ 	      painting =  Driver.global.painting() ; // gets a safe copy 
+ 	      paint(); //paints what things look like.
+ 	      
+
+ 	      toolBox.end(g2, endX, endY);  // pass by reference so it will alter painting and wo do not need to wory about passing values.
+ 	      
+ 	      //Driver.global.log(painting);
+ 	      //paint();//displays what is going on
  	      
        } 
        public void mouseExited(MouseEvent evt){}
@@ -91,14 +99,19 @@ public class gui_Canvas extends JPanel
 	        	 case Box:
 	        	 {
 	        		 //maybe change the icon of mouse.
+	        		 
 	        		 int curX = e.getX();
 	        	     int curY = e.getY();
-	        	     /*Graphics2D painting = Driver.global.painting();
 	        	     
-	        	     painting = toolBox.hold(painting, curX, curY); // this function will oporate at all time, but is capable of turning off when not in use.
+	        	     Graphics2D g2 = (Graphics2D)getGraphics();
+	        	      
+	        	     painting =  Driver.global.painting() ; // gets a safe copy 
+	        	     paint(); //paints what things look like.
 	        	     
-	        	     /////////////////Driver.global.imageBuffer.push(painting);  Similar process to before, this alows for the displaing of things, but does not record it.
-	        	     paintComponent(painting);*/
+	        	     toolBox.hold(g2, curX, curY); // this function will oporate at all time, but is capable of turning off when not in use.
+	        	     
+	        	     //no logging because we are just showing a simple snapshot of what is going on.
+	        	     paint();//displays what is going on
 	        	 }	break;
 	        	 default:
 	        	 {
