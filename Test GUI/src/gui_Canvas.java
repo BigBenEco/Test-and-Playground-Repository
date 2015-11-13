@@ -15,8 +15,8 @@ public class gui_Canvas extends JPanel
 		width = wWidth;
 		height = wHeight;
 		
-		setBackground(Color.RED);
-		//setPreferredSize(new Dimension(wWidth, wHeight));
+		//setBackground(Color.RED);
+		setPreferredSize(new Dimension(wWidth, wHeight));
 	}
 	
 }
