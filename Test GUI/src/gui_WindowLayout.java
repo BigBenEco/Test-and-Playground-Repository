@@ -1,22 +1,29 @@
-import javax.swing.JFrame;
 
-import PaintPanel.MouseComp;
+import java.awt.Container;
+
+import javax.swing.JFrame;
 
 public class gui_WindowLayout extends JFrame 
 {
-	private static gui_WindowLayout current;
-	addMouseListener(new MouseComp());
-    gui_WindowLayout ()
+
+	public Container contents;
+	
+	public int width;
+	public int height;
+	
+	//addMouseListener(new MouseComp());
+    gui_WindowLayout ( int swidth, int sheight)
     {
-        add (gui_WindowLayout.getInstance());
-        pack();
-        setVisible( true );
+    	super("Paint SL");
+        width = swidth;
+        height = sheight;
+        setSize(width, height);
+    	
     }
 
-    public static gui_WindowLayout getInstance()
+    public void run()
     {
-        if(current == null)
-            current = new gui_WindowLayout();
-        return current;
+    	pack();
+    	setVisible( true );
     }
 }

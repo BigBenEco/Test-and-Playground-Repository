@@ -5,11 +5,11 @@ import javax.swing.*;
 
 public class gui_ToolBarLayout extends JPanel {
 	
-	gui_panel_canvus canvus;
+	gui_panel_canvas canva;
 
 	gui_ToolBarLayout ( gui_panel_canvus canvus)
 	{
-		this.canvus = canvus;
+		this.canvas = canvus;
 		
 		JButton box = new JButton("Box");
 		JButton undo = new JButton("Undo");
@@ -30,7 +30,7 @@ public class gui_ToolBarLayout extends JPanel {
 	       String command = ae.getActionCommand();
 	       if(command.equals("Clear"))
 	       {
-	    	   canvus.clear();
+	    	   canvas.clear();
 	       }
 	   }
 	 }
