@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -5,11 +8,11 @@ import javax.swing.*;
 
 public class gui_ToolBarLayout extends JPanel {
 	
-	gui_panel_canvas canva;
+	gui_Canvas canvus;
 
-	gui_ToolBarLayout ( gui_panel_canvus canvus)
+	gui_ToolBarLayout ( gui_Canvas canvus)
 	{
-		this.canvas = canvus;
+		this.canvus = canvus;
 		
 		JButton box = new JButton("Box");
 		JButton undo = new JButton("Undo");
@@ -19,7 +22,18 @@ public class gui_ToolBarLayout extends JPanel {
 	    undo.addActionListener(new ButtonListener());
 	    clear.addActionListener(new ButtonListener());
 	    
+	    setLayout(new GridLayout(1, 7));
 	    
+	    setBackground(Color.RED);
+		add(box);
+		add(undo);
+		add(clear);
+		
+		//setPreferredSize(new Dimension(450, 50));
+        //setBorder(BorderFactory.createCompoundBorder(
+        //                        BorderFactory.createMatteBorder(
+        //                                        1,1,2,2,Color.black),
+        //                        BorderFactory.createEmptyBorder(5,5,5,5)));
 	    
 	}
 	
@@ -30,7 +44,7 @@ public class gui_ToolBarLayout extends JPanel {
 	       String command = ae.getActionCommand();
 	       if(command.equals("Clear"))
 	       {
-	    	   canvas.clear();
+	    	   //canvus.clear();
 	       }
 	   }
 	 }

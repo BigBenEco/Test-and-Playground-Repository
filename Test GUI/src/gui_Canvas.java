@@ -1,16 +1,22 @@
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
-import PaintPanel.MouseComp;
-
 public class gui_Canvas extends JPanel
 {
-	
-	gui_Canvas()
+	int wWidth, wHeight, width, height;
+	gui_Canvas( int wWidth, int wHeight)
 	{
-		super();
+		this.wWidth = wWidth;
+		this.wHeight = wHeight;
+		width = wWidth;
+		height = wHeight;
+		
+		setBackground(Color.RED);
+		//setPreferredSize(new Dimension(wWidth, wHeight));
 	}
 	
 }
