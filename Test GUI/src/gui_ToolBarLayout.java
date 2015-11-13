@@ -52,11 +52,11 @@ public class gui_ToolBarLayout extends JPanel {
 	       }
 	       else if(command.equals("Undo"))
 	       {
-	    	   canvas.toolBox.myTool = Tool_Box.tool.Mouse;
+	    	   //canvas.toolBox.myTool = Tool_Box.tool.Mouse;
 	       }
 	       else if(command.equals("Clear"))
 	       {
-	    	   canvas.toolBox.myTool = Tool_Box.tool.Mouse;
+	    	   //canvas.toolBox.myTool = Tool_Box.tool.Mouse;
 	    	   canvas.clear();
 	       }
 	   }

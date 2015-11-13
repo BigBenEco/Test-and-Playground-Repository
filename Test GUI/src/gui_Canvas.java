@@ -41,6 +41,17 @@ public class gui_Canvas extends JPanel
 	    paintComponent(painting);
 	    
 	    //*/
+		
+		Graphics2D g2 = (Graphics2D)getGraphics();
+		painting = new BufferedImage(painting.getWidth(), painting.getHeight(), painting.getType());
+    	super.paintComponent(g2);
+    	Graphics2D gg = (Graphics2D) painting.getGraphics();
+    	gg.drawRect(500, 210, 10, 20);
+    	g2.drawRect(500, 200, 20, 10);
+    	g2.drawImage(painting, 0, 1, null);
+    	
+    	Driver.global.log(painting);
+		
  	  }
     public void paint()
     {  
@@ -98,41 +109,33 @@ public class gui_Canvas extends JPanel
     	
           
          public void mouseMoved(MouseEvent e) {
-             //if(e.getX() < 20){System.out.println("mouse at "+e.getX()+" and "+e.getY() ); toolBar.setSize(29, 29); toolBar.repaint(); }
-             //else{toolBar.setSize(293, 293); toolBar.repaint();}
-        	 switch(toolBox.myTool)
-        	 {
-	        	 case Mouse:
-	        	 {
-	        		 //nomnomnom
-	        	 }	break;
-	        	 case Box:
-	        	 {
-	        		 //maybe change the icon of mouse.
-	        		 
-	        		 int curX = e.getX();
-	        	     int curY = e.getY();
-	        	     
-	        	     Graphics2D g2 = (Graphics2D)getGraphics();
-	        	      
-	        	     painting =  Driver.global.painting() ; // gets a safe copy 
-	        	     //paint(); //paints what things look like.
-	        	     
-	        	     toolBox.hold(painting, curX, curY); // this function will oporate at all time, but is capable of turning off when not in use.
-	        	     
-	        	     //no logging because we are just showing a simple snapshot of what is going on.
-	        	     paint();//displays what is going on
-	        	 }	break;
-	        	 default:
-	        	 {
-	        		 //potato
-	        	 }
-        	 }
+
+        	 int curX = e.getX();
+    	     int curY = e.getY();
+    	     
+    	     painting =  Driver.global.painting() ; // gets a safe copy 
+    	     Graphics2D g2 = (Graphics2D)getGraphics();
+    	      
+    	      
+
+    	     toolBox.end(painting, curX, curY);  // pass by reference so it will alter painting and wo do not need to wory about passing values.
+    	      
+    	     paint(); //paints what things look like.
         	 
          }
           
          public void mouseDragged(MouseEvent e) {
-             
+        	 int curX = e.getX();
+    	     int curY = e.getY();
+    	     
+    	     painting =  Driver.global.painting() ; // gets a safe copy 
+    	     Graphics2D g2 = (Graphics2D)getGraphics();
+    	      
+    	      
+
+    	     toolBox.end(painting, curX, curY);  // pass by reference so it will alter painting and wo do not need to wory about passing values.
+    	      
+    	     paint(); //paints what things look like.
          }
     }
     
