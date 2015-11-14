@@ -43,7 +43,7 @@ public class itb_Box {
 		int recWidth = inX - startX; 
 		int recHeight = inY - startY;
 		// draw the thing.
-		tool.drawRect(startX, startY, recWidth, recHeight);
+		//tool.drawRect(startX, startY, recWidth, recHeight);
 		
 		// End here, because since we are changing things to painting with it graphics2D object, and painting is an object itself, than we are passing everything important by reference, so no data to return.
 	}
@@ -63,6 +63,8 @@ public class itb_Box {
 		int recWidth = inX - startX; 
 		int recHeight = inY - startY;
 		// draw the thing.
+		tool.setBackground( Color.RED );
+		tool.setColor(Color.BLUE);
 		tool.drawRect(startX, startY, recWidth, recHeight);
 		
 		

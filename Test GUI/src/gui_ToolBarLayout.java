@@ -53,6 +53,7 @@ public class gui_ToolBarLayout extends JPanel {
 	       }
 	       else if(command.equals("Undo"))
 	       {
+	    	   Driver.global.undo();
 	    	   //canvas.toolBox.myTool = Tool_Box.tool.Mouse;
 	       }
 	       else if(command.equals("Clear"))

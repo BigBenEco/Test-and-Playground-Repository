@@ -48,24 +48,30 @@ public class gui_Canvas extends JPanel
 		//painting =  Driver.global.painting() ; // gets a safe copy 
     	super.paintComponent(g2);
     	Graphics2D gg = (Graphics2D) painting.getGraphics();
+    	gg.setColor( Color.LIGHT_GRAY );
+    	gg.fillRect(0, 0, width, height);
     	// g2.drawImage(painting, 0, 1, null); // i think the two need to 
     	
     	Driver.global.log(painting);
+    	
+    	paint();
 		
  	  }
     public void paint()
     {  
     	Graphics2D g2 = (Graphics2D)getGraphics();
     	super.paintComponent(g2);
-    	Graphics2D gg = (Graphics2D) painting.getGraphics();
-    	g2.drawImage(painting, 0, 1, null);
+    	g2.drawImage(painting, 0, 0, null);
     	//g2.drawImage(painting, null, 0, 0);
         //super.paintComponent(g2); //seems to refresh things
     }
-    public void drawing()
+    
+    public void refresh()
     {
-        Graphics2D g2 = (Graphics2D)getGraphics();
-        //g2.drawRect(startX, startY, endX, endY);
+    	painting =  Driver.global.painting() ; // gets a safe copy 
+	    Graphics2D g2 = (Graphics2D)getGraphics();
+	    super.paintComponent(g2);
+    	g2.drawImage(painting, 0, 0, null);
     }
     
     public class MouseComp implements MouseListener

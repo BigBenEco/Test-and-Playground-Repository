@@ -29,7 +29,7 @@ public class data_ImageBuffer {
 		opening += ( opening == (length-1) ) ? (1-length) : 1;  //m
 	}
 
-	public BufferedImage pop(BufferedImage top) throws CanNotUndoException
+	public BufferedImage pop() throws CanNotUndoException
 	{
 		if(isEmpty)
 		{
