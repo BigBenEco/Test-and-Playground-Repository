@@ -40,6 +40,7 @@ public class gui_WindowLayout extends JFrame
     {
     	setExtendedState(JFrame.MAXIMIZED_BOTH);
     	setVisible( true );
+    	
     }
     
     public class MouseComp implements MouseListener

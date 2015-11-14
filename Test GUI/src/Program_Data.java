@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Toolkit;
@@ -28,6 +29,8 @@ public class Program_Data {
 	{
 		programWindow = new gui_WindowLayout(width, height);
 		currentPainting = new BufferedImage(programWindow.canvas.width,programWindow.canvas.height, BufferedImage.TYPE_INT_RGB);
+		Graphics2D g2 = (Graphics2D)currentPainting.getGraphics();
+		g2.setBackground( new Color(80, 80, 80) );
 	}
 	
 	public void run()

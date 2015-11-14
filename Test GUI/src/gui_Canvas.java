@@ -30,6 +30,7 @@ public class gui_Canvas extends JPanel
 		//setBackground(Color.RED);
 		addMouseListener(new MouseComp());
 		setPreferredSize(new Dimension(wWidth, wHeight));
+		
 	}
 	
 	public void clear()
@@ -43,12 +44,11 @@ public class gui_Canvas extends JPanel
 	    //*/
 		
 		Graphics2D g2 = (Graphics2D)getGraphics();
-		painting = new BufferedImage(painting.getWidth(), painting.getHeight(), painting.getType());
+		painting = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		//painting =  Driver.global.painting() ; // gets a safe copy 
     	super.paintComponent(g2);
     	Graphics2D gg = (Graphics2D) painting.getGraphics();
-    	gg.drawRect(500, 210, 10, 20);
-    	g2.drawRect(500, 200, 20, 10);
-    	g2.drawImage(painting, 0, 1, null);
+    	// g2.drawImage(painting, 0, 1, null); // i think the two need to 
     	
     	Driver.global.log(painting);
 		
@@ -58,8 +58,6 @@ public class gui_Canvas extends JPanel
     	Graphics2D g2 = (Graphics2D)getGraphics();
     	super.paintComponent(g2);
     	Graphics2D gg = (Graphics2D) painting.getGraphics();
-    	gg.drawRect(500, 210, 10, 20);
-    	g2.drawRect(500, 200, 20, 10);
     	g2.drawImage(painting, 0, 1, null);
     	//g2.drawImage(painting, null, 0, 0);
         //super.paintComponent(g2); //seems to refresh things
