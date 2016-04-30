@@ -1,6 +1,7 @@
 // Fig. 11.41: BorderLayoutFrame.java
 // Demonstrating BorderLayout.
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
@@ -34,6 +35,8 @@ public class BorderLayoutFrame extends JFrame implements ActionListener
       add( buttons[ 2 ], BorderLayout.EAST ); // add button to east
       add( buttons[ 3 ], BorderLayout.WEST ); // add button to west
       add( buttons[ 4 ], BorderLayout.CENTER ); // add button to center
+      
+      setBackground(Color.RED);
    } // end BorderLayoutFrame constructor
 
    // handle button events
